@@ -21,7 +21,7 @@ class ContactController extends AbstractController
             if($form->get('verif')->getData() == 11) {
                 $send_email = (new \Swift_Message('Teamates - Message de ' . $form->get("name")->getData()))
                     ->setFrom('association@teamates-gaming.com')
-                    ->setTo('contact.informatique@ribegroupe.com')
+                    ->setTo('association@teamates-gaming.com')
                     ->setBody("Nom : " . $form->get("name")->getData() . "<br>Adresse Mail : " . $form->get("email")->getData() . "<br>Objet : " . $form->get("objet")->getData() . "<br>Message : <br><br>" . nl2br(stripslashes(strip_tags($form->get("message")->getData()))), 'text/html');
 
                 $mailer->send($send_email);
