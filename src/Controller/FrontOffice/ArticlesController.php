@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\BackOffice;
+namespace App\Controller\FrontOffice;
 
 use App\Entity\Article;
 use App\Form\DownloadType;
@@ -9,17 +9,16 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
-class DashboardController extends AbstractController
+class ArticlesController extends AbstractController
 {
     /**
-     * @Route("/admin", name="dashboard")
+     * @Route("/articles", name="articles")
      */
     public function index()
     {
-
         $allArticles = $this->getDoctrine()->getRepository(Article::class);
         $articles = $allArticles->findAll();
 
-        return $this->render('BackOffice/dashboard.html.twig', ['articles' => $articles]);
+        return $this->render('FrontOffice/articles.html.twig', ['articles' => $articles]);
     }
 }

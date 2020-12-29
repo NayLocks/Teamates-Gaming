@@ -83,17 +83,11 @@ class UsersController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid()){
 
-            if($form->get("roles")->getData() == "ROLE_ADMIN"){
-                $visible = 0;
-            }else{
-                $visible = 1;
-            }
-
             $user->setUsername($form->get("username")->getData());
             $user->setMail($form->get("email")->getData());
             $user->setPassword($this->passwordEncoder->encodePassword($user, $form->get("password")->getData()));
             $user->setRoles([$form->get("roles")->getData()]);
-            $user->setIsVisible($visible);
+            $user->setIsVisible(1);
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
