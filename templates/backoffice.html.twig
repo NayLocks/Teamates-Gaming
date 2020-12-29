@@ -28,26 +28,22 @@
     <aside class="menu-sidebar d-none d-lg-block">
         <div class="logo">
             <a href="#">
-                <img src="images/icon/logo.png" alt="Cool Admin" />
+                <img src="{{ asset('BackOffice/images/icon/logo.png') }}" alt="Cool Admin" />
             </a>
         </div>
         <div class="menu-sidebar__content js-scrollbar1">
             <nav class="navbar-sidebar">
                 <ul class="list-unstyled navbar__list">
-                    <li class="active has-sub">
-                        <a class="js-arrow" href="#">
-                            <i class="fas fa-tachometer-alt"></i>Dashboard</a>
-                        <ul class="list-unstyled navbar__sub-list js-sub-list">
-                            <li><a href="index.html">Dashboard 1</a></li>
-                        </ul>
-                    </li>
+                    <li class="has-sub"><a class="js-arrow" href="{{ path('dashboard') }}"><i class="fas fa-tachometer-alt"></i>Dashboard</a></li>
+                    <li class="has-sub"><a class="js-arrow" href="{{ path('users') }}"><i class="fas fa-user"></i>Utilisateurs</a></li>
+                    <li class="active has-sub"><a class="js-arrow" href="{{ path('homepage') }}"><i class="fas fa-desktop"></i>Teamates-Gaming</a></li>
                 </ul>
             </nav>
         </div>
     </aside>
 
     <div class="page-container">
-        <!-- HEADER DESKTOP-->
+        {% if is_granted('ROLE_USER') %}
         <header class="header-desktop">
             <div class="section__content section__content--p30">
                 <div class="container-fluid">
@@ -62,27 +58,27 @@
                             <div class="account-wrap">
                                 <div class="account-item clearfix js-item-menu">
                                     <div class="image">
-                                        <img src="images/icon/avatar-01.jpg" alt="John Doe" />
+                                        <img src="{{ asset('BackOffice/images/icon/avatar-01.jpg') }}" alt="{{ app.user.username }}" />
                                     </div>
                                     <div class="content">
-                                        <a class="js-acc-btn" href="">john doe</a>
+                                        <a class="js-acc-btn" href="">{{ app.user.username }}</a>
                                     </div>
                                     <div class="account-dropdown js-dropdown">
                                         <div class="info clearfix">
                                             <div class="image">
                                                 <a href="#">
-                                                    <img src="images/icon/avatar-01.jpg" alt="John Doe" />
+                                                    <img src="{{ asset('BackOffice/images/icon/avatar-01.jpg') }}" alt="{{ app.user.username }}" />
                                                 </a>
                                             </div>
                                             <div class="content">
                                                 <h5 class="name">
-                                                    <a href="">john doe</a>
+                                                    <a href="">{{ app.user.username }}</a>
                                                 </h5>
-                                                <span class="email">johndoe@example.com</span>
+                                                <span class="email">{{ app.user.mail }}</span>
                                             </div>
                                         </div>
                                         <div class="account-dropdown__footer">
-                                            <a href="#"><i class="zmdi zmdi-power"></i>Logout</a>
+                                            <a href="{{ path('app_logout') }}"><i class="zmdi zmdi-power"></i>Logout</a>
                                         </div>
                                     </div>
                                 </div>
@@ -93,13 +89,23 @@
             </div>
         </header>
 
+        {% endif %}
+
         <div class="main-content">
             <div class="section__content section__content--p30">
                 <div class="container-fluid">
                     {% block body %}{% endblock %}
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="copyright">
+                                <p>Copyright ©<script>document.write(new Date().getFullYear())</script> <span><a target="_blank" href="https://teamates-gaming.com/">Teamates-Gaming</a></span>.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+        {% block modal %}{% endblock %}
 
         <script src="{{ asset('BackOffice/vendor/jquery-3.2.1.min.js') }}"></script>
         <script src="{{ asset('BackOffice/vendor/bootstrap-4.1/popper.min.js') }}"></script>

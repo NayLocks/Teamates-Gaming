@@ -1,0 +1,81 @@
+{% set roles = {"ROLE_ADMIN": "Administrateur", "ROLE_USER": "Utilisateur"} %}
+
+{% extends 'backoffice.html.twig' %}
+
+{% block page_name %}Utilisateurs{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        td, tr{
+            text-align: center;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="overview-wrap">
+                <h2 class="title-1">Liste des utilisateurs</h2>
+                <a class="au-btn au-btn-icon au-btn--blue" href="{{ path('register') }}"><i class="zmdi zmdi-plus"></i>Nouvel utilisateur</a>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="table-responsive table--no-card m-b-40">
+                <table class="table table-borderless table-striped table-earning">
+                    <thead>
+                    <tr>
+                        <th>Identifiant</th>
+                        <th>Mail</th>
+                        <th>Rôle</th>
+                        <th style="text-align: center">Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for user in users %}
+                        <tr>
+                            <td>{{ user.username }}</td>
+                            <td mailto="test@tesT.com">{{ user.mail }}</td>
+                            <td>{{ roles[user.roles[0]] }}</td>
+                            <td>
+                                <a type="button" class="btn btn-info">MODIFIER</a>
+                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#{{ user.username }}">SUPPRIMER</button>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block modal %}
+    {% for user in users %}
+        <div class="modal fade" id="{{ user.username }}" tabindex="-1" role="dialog" aria-labelledby="staticModalLabel" aria-hidden="true"
+             data-backdrop="static">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticModalLabel">Suppression de : {{ user.username }}</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            Êtes-vous sûr de vouloir le supprimer ?
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                        <button type="button" class="btn btn-danger">Supprimer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

@@ -2,7 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="38cf163a-f544-4545-88fe-055b2d26c3aa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/templates/frontoffice.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/frontoffice.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/BackOffice/UsersController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/BackOffice/users.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/security/register.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Teamates-Gaming.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Teamates-Gaming.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/BackOffice/dashboard.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/BackOffice/dashboard.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/backoffice.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/backoffice.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,6 +134,8 @@
       <path value="$PROJECT_DIR$/vendor/psr/event-dispatcher" />
       <path value="$PROJECT_DIR$/vendor/symfony/swiftmailer-bundle" />
       <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
     </include_path>
   </component>
   <component name="ProjectId" id="1mK5FiP7zOQRMoqbW6MdRQJCnp1" />
@@ -132,10 +147,14 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../DifforVertV3" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\j.delannoy\Desktop\Project\Symfony Project\Teamates-Gaming\src\Controller\BackOffice" />
+      <recent name="C:\Users\j.delannoy\Desktop\Project\Symfony Project\Teamates-Gaming\templates\BackOffice" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\j.delannoy\Desktop\Project\Symfony Project\Teamates-Gaming\public\Commun" />
     </key>
@@ -149,7 +168,7 @@
       <option name="presentableId" value="Default" />
       <updated>1609229339400</updated>
       <workItem from="1609229340533" duration="4858000" />
-      <workItem from="1609236942119" duration="768000" />
+      <workItem from="1609236942119" duration="7933000" />
     </task>
     <servers />
   </component>
