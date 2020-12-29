@@ -1,0 +1,42 @@
+{% extends'frontoffice.html.twig' %}
+
+{% block page_name %}L'association{% endblock %}
+
+{% block body %}
+    <section class="trophey-room">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>L'histoire de l'association</h4>
+                </div>
+                <div class="col-md-8 test" style="width:100%;">
+                    <p>La Teamates Gaming (TmG) a vu le jour fin novembre 2015, puis en association loi 1901 le 28 janvier 2017, créée dans le but de développer l’e-sport en France. Nous sommes là pour aider les jeunes joueurs à se développer dans ce domaine, et leurs permettre d’avoir un encadrement et un suivi afin qu’ils puissent s’améliorer sur leur jeu favori.</br>
+                        Cela doit permettre aux joueurs de s’épanouir dans leur passion qu’est le jeu vidéo et de faire de nouvelles rencontres sans barrière de religion, de milieu social et de faciès. Nous souhaitons donner du sens à nos actions et partager un maximum nos valeurs que sont l’entraide, le vivre ensemble, le respect et la solidarité.</p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="trophey-media">
+                        <video controls="controls" preload="auto" contextmenu="return false;" oncontextmenu="return false;" controlsList="nodownload" poster="{{ asset('Commun/images/TMG.png') }}" alt="club-image" width="100%" >
+                            <source src="{{ asset('Commun/videos/TMG-VIDEO-compressed.mp4') }}" type="video/mp4" />
+                        </video>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <p>Teamates Gaming est une association sous loi 1901 déclarée depuis 2017 qui a pour objectif de sensibiliser à la pratique de l’esport et d’encadrer cette pratique au mieux pour les jeunes joueurs.</br>
+                        Elle a vu le jour d’une envie commune de ses fondateurs de participer à l’évolution de l’esport en France et d’accompagner les joueurs au mieux dans leur apprentissage de leurs jeux favoris.</br></br>
+                        Nous faisons référence aux joueurs qui composent une équipe d’esport. Cette mentalité d’équipe est importante pour nous car elle régit à la fois les équipes en elles-mêmes mais aussi tous les membres de l’association qui participent à son fonctionnement.</br>
+                        Le respect et l’entraide sont les maîtres-mots de l’association, nous sommes fiers de véhiculer nos valeurs au travers de nos couleurs lors des différents évènements Esport.</p>
+                    <h3>Notre devise : One Spirit, One Team, One Win</h3>
+                </div>
+                <div class="col-md-4">
+                    <a class="twitter-timeline" data-lang="fr" data-height="400" data-theme="light" href="https://twitter.com/TeamatesG?ref_src=twsrc%5Etfw">Tweets by TeamatesG</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--TROPHEY ROOM END-->
+{% endblock %}

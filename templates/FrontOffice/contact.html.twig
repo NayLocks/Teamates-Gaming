@@ -1,0 +1,95 @@
+{% extends 'frontoffice.html.twig' %}
+
+{% block page_name %}Nous Contacter{% endblock %}
+
+{% block body %}
+    <section class="contacts-wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <h4>Rejoignez-Nous</h4>
+                    <div class="contact-office-img">
+                        <img class="img-responsive" src="{{ asset('Commun/images/TMG.png') }}" alt="contact-office-img">
+                    </div>
+                    <ul class="contact-list">
+                        <li><i class="fa fa-flag" aria-hidden="true"></i><span>18 Allée du Président Kennedy, 95460 Ézanville</span></li>
+                        <li><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:association@teamates-gaming.com">association@teamates-gaming.com</a></li>
+                    </ul>
+                    <ul class="socials">
+                        <li><a href="https://www.facebook.com/TeamatesGaming/" target="_blank"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a></li>
+                        <li><a href="https://twitter.com/TeamatesG" target="_blank"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a></li>
+                        <li><a href="https://www.instagram.com/teamatesgaming/" target="_blank"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-7">
+                    <h4>Contact</h4>
+                    {{ form_start(form) }}
+                    <div class="leave-comment-wrap">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="item">
+                                    <label>
+                                        <span>Nom / Prénom<i>*</i></span>
+                                        {{ form_widget(form.name) }}
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="item">
+                                    <label>
+                                        <span>Email <i>*</i></span>
+                                        {{ form_widget(form.email) }}
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="item">
+                                    <label>
+                                        <span>Objet <i>*</i></span>
+                                        {{ form_widget(form.objet) }}
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="item">
+                                    <label>
+                                        <span>Votre message <i>*</i></span>
+                                        {{ form_widget(form.message) }}
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="item">
+                                    <label>
+                                        {{ form_widget(form.verif) }}
+                                    </label>
+                                    {% if error is defined %}
+                                        <span><i>{{ error }}</i></span>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="item">
+                                    <label>
+                                        {{ form_widget(form.send) }}
+                                    </label>
+                                </div>
+                            </div>
+                            {% if valid is defined %}
+                                <div class="col-md-12" style="text-align: center">
+                                    <span><i style="color: green;">{{ valid }}</i></span>
+                                </div>
+                            {% endif %}
+                        </div>
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        function onSubmit(token) {
+            document.getElementById("demo-form").submit();
+        }
+    </script>
+{% endblock %}
