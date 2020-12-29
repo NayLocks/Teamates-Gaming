@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="38cf163a-f544-4545-88fe-055b2d26c3aa" name="Default Changelist" comment="" />
+    <list default="true" id="38cf163a-f544-4545-88fe-055b2d26c3aa" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/templates/frontoffice.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/frontoffice.html.twig" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -147,7 +149,7 @@
       <option name="presentableId" value="Default" />
       <updated>1609229339400</updated>
       <workItem from="1609229340533" duration="4858000" />
-      <workItem from="1609236942119" duration="574000" />
+      <workItem from="1609236942119" duration="768000" />
     </task>
     <servers />
   </component>
